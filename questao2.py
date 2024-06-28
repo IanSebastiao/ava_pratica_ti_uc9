@@ -24,3 +24,37 @@ Os números digitados devem ser armazenados em uma lista e depois de encerrar, m
 
 '''
 
+numeros=[]
+
+def calculardora(a, b, operacao):
+        if operacao == '+':
+            return a + b
+        elif operacao == '-':
+            return a - b
+        elif operacao == '*':
+            return a * b
+        elif operacao == '/':
+            return a / b
+        
+            
+
+while True:
+    try:
+        a = (int(input('Digite o primeiro valor: ')))
+        b = (int(input('Digite o segundo valor: ')))
+        operacao = input('Digite a operação (+, -, *, /) - ou s para sair: ')
+        print(calculardora(a, b, operacao))
+        numeros.append(a)
+        numeros.append(b)
+    except:
+        print('Digite um valor válido')
+    
+    finally: 
+        if operacao == 's':
+            print('Fim!')
+            break
+
+print(f'Numeros digitados: {numeros}')
+print(f'Maior número: {max(numeros)}')
+print(f'Menor número: {min(numeros)}')
+print(f'Média dos números: {sum(numeros) / len(numeros)}')
